@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet the Green Hands team — Pakistan's most experienced horticulture and landscaping professionals, led by Mian Mansha.">
+  <title>Our Team — Green Hands</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ── TEAM PAGE SPECIFIC ── */
+    .team-hero {
+      background: linear-gradient(165deg, #0d2218 0%, #1A3A2A 45%, #234d38 100%);
+      min-height: 420px;
+      display: flex;
+      align-items: flex-end;
+      padding: 120px 48px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .team-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23C9A84C' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .team-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .team-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(44px, 6vw, 80px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+    .team-hero h1 em { font-style: italic; color: var(--gold-light); }
+    .team-hero p {
+      font-size: 17px;
+      font-weight: 300;
+      color: rgba(250,250,247,0.65);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .breadcrumb a {
+      color: rgba(250,250,247,0.5);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb span {
+      color: rgba(250,250,247,0.25);
+      font-size: 12px;
+    }
+
+    /* ── SUPERVISOR CARD ── */
+    .supervisor-section {
+      background: var(--forest);
+      padding: 80px 48px;
+    }
+    .supervisor-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .supervisor-card {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 72px;
+      align-items: center;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 6px;
+      padding: 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .supervisor-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    }
+    .supervisor-card::after {
+      content: 'SUPERVISOR';
+      position: absolute;
+      top: 24px; right: 32px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      opacity: 0.6;
+    }
+
+    /* Avatar illustrations */
+    .avatar-frame {
+      position: relative;
+    }
+    .avatar-img {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+    .avatar-ring {
+      position: absolute;
+      top: -12px; right: -12px;
+      width: 80px; height: 80px;
+      border: 2px solid rgba(201,168,76,0.35);
+      border-radius: 50%;
+    }
+    .avatar-ring-2 {
+      position: absolute;
+      bottom: -16px; left: -16px;
+      width: 56px; height: 56px;
+      border: 2px solid rgba(123,158,135,0.25);
+      border-radius: 50%;
+    }
+    .exp-badge {
+      position: absolute;
+      bottom: -14px;
+      right: 20px;
+      background: var(--gold);
+      color: var(--forest);
+      border-radius: 2px;
+      padding: 8px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(201,168,76,0.4);
+    }
+
+    .supervisor-info {}
+    .member-tag {
+      display: inline-block;
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding-left: 24px;
+      position: relative;
+    }
+    .member-tag::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 14px; height: 1px;
+      background: var(--gold);
+    }
+    .member-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 54px);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .member-name-ur {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--gold-light);
+      font-style: italic;
+      margin-bottom: 24px;
+      display: block;
+    }
+    .member-title {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sage-light);
+      margin-bottom: 24px;
+    }
+    .member-bio {
+      font-size: 15px;
+      line-height: 1.75;
+      color: rgba(250,250,247,0.6);
+      margin-bottom: 32px;
+    }
+    .member-stats {
+      display: flex;
+      gap: 32px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .mstat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .mstat-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(250,250,247,0.4);
+      margin-top: 4px;
+    }
+
+    .expertise-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .etag {
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.25);
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 2px;
+    }
+
+    /* ── TEAM MEMBERS ── */
+    .team-section {
+      background: var(--ivory);
+      padding: 80px 48px;
+    }
+    .team-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 56px;
+    }
+    .team-card {
+      background: var(--white);
+      border: 1px solid rgba(123,158,135,0.15);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: box-shadow 0.3s, transform 0.3s;
+      position: relative;
+    }
+    .team-card:hover {
+      box-shadow: 0 20px 60px rgba(26,58,42,0.12);
+      transform: translateY(-4px);
+    }
+    .team-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--forest), var(--sage));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .team-card:hover::before { opacity: 1; }
+
+    .card-visual {
+      width: 100%;
+      aspect-ratio: 4/3;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-body {
+      padding: 36px;
+    }
+    .card-exp-badge {
+      position: absolute;
+      top: 20px; right: 20px;
+      background: var(--forest);
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 2px;
+    }
+
+    /* Quote block */
+    .member-quote {
+      background: var(--ivory);
+      border-left: 3px solid var(--gold);
+      padding: 16px 20px;
+      margin-top: 20px;
+      border-radius: 0 4px 4px 0;
+    }
+    .member-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* Timeline */
+    .career-timeline {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .tl-dot {
+      width: 10px; height: 10px;
+      min-width: 10px;
+      background: var(--gold);
+      border-radius: 50%;
+      margin-top: 5px;
+      position: relative;
+    }
+    .tl-dot::after {
+      content: '';
+      position: absolute;
+      top: 10px; left: 4px;
+      width: 2px;
+      height: 24px;
+      background: rgba(201,168,76,0.2);
+    }
+    .timeline-item:last-child .tl-dot::after { display: none; }
+    .tl-year {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      min-width: 52px;
+    }
+    .tl-desc {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.55;
+    }
+
+    /* Under supervision banner */
+    .supervision-banner {
+      background: var(--forest);
+      padding: 32px 48px;
+      text-align: center;
+    }
+    .supervision-banner p {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(250,250,247,0.5);
+    }
+    .supervision-banner strong {
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    /* Skills bar */
+    .skills-section { margin-top: 24px; }
+    .skill-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-mid);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .skill-bar {
+      height: 4px;
+      background: var(--ivory-warm);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--forest), var(--sage));
+      border-radius: 2px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .supervisor-card { grid-template-columns: 1fr; gap: 48px; }
+      .team-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .team-hero { padding: 120px 20px 60px; }
+      .supervisor-section, .team-section { padding: 60px 20px; }
+      .supervisor-card { padding: 36px 24px; }
+      .supervision-banner { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     ANNOUNCEMENT BAR
+═══════════════════════════════════════ -->
+<div class="announcement">
+  🌿 Supplying Offices, Hotels &amp; Events across Pakistan — <a href="index.html#contact">Get a Bulk Quote via WhatsApp</a>
+</div>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+<nav id="mainNav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="Green Hands home">
+    <div class="logo-icon" aria-hidden="true">🌿</div>
+    <span class="logo-text">Green <span>Hands</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#portfolio">Portfolio</a></li>
+    <li><a href="team.html" style="color:var(--gold);">Our Team</a></li>
+    <li><a href="index.html#sustainability">Sustainability</a></li>
+    <li><a href="index.html#testimonials">Reviews</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Consultation</a></li>
+  </ul>
+  <div class="nav-icons">
+    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
+    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">👍</a>
+    <a href="index.html#contact" aria-label="WhatsApp">💬</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#services">Services</a>
+  <a href="index.html#portfolio">Portfolio</a>
+  <a href="team.html">Our Team</a>
+  <a href="index.html#sustainability">Sustainability</a>
+  <a href="index.html#testimonials">Reviews</a>
+  <a href="index.html#contact" class="mobile-cta">Free Consultation</a>
+</div>
+
+<a href="https://wa.me/923314412354" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+
+<!-- ═══════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════ -->
+<div class="team-hero">
+  <div class="team-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="team.html">Our Team</a>
+    </div>
+    <h1>The Hands Behind<br><em>Every Masterpiece</em></h1>
+    <p>Meet the seasoned professionals who bring decades of horticultural expertise and passion to every project — under the visionary leadership of Mian Mansha.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     SUPERVISOR
+═══════════════════════════════════════ -->
+<div class="supervisor-section">
+  <div class="supervisor-inner">
+
+    <div style="text-align:center; margin-bottom:52px;">
+      <span class="section-tag" style="color:var(--sage-light)">Leadership</span>
+      <h2 class="section-heading" style="color:var(--white);">Under the Supervision of</h2>
+    </div>
+
+    <div class="supervisor-card reveal">
+      <!-- Portrait -->
+      <div class="avatar-frame">
+        <div class="avatar-img">
+          <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;" role="img" aria-label="Mian Mansha portrait illustration">
+            <!-- Background -->
+            <rect width="360" height="360" fill="#0d2218"/>
+            <!-- Subtle leaf pattern -->
+            <circle cx="320" cy="40"  r="80" fill="#1a3a2a" opacity="0.5"/>
+            <circle cx="40"  cy="320" r="60" fill="#1a3a2a" opacity="0.4"/>
+            <!-- Figure body -->
+            <ellipse cx="180" cy="310" rx="110" ry="60" fill="#1A3A2A"/>
+            <!-- Suit jacket -->
+            <path d="M110 280 C110 240 130 210 150 200 L180 215 L210 200 C230 210 250 240 250 280 L250 360 L110 360Z" fill="#2d4a2a"/>
+            <!-- White shirt -->
+            <path d="M165 200 L180 215 L195 200 L190 230 L180 235 L170 230Z" fill="#f0ebe0"/>
+            <!-- Tie -->
+            <path d="M176 210 L184 210 L186 250 L180 258 L174 250Z" fill="#C9A84C"/>
+            <!-- Neck -->
+            <rect x="170" y="185" width="20" height="22" fill="#c8a878" rx="4"/>
+            <!-- Head -->
+            <ellipse cx="180" cy="160" rx="52" ry="58" fill="#c8a878"/>
+            <!-- Hair -->
+            <ellipse cx="180" cy="112" rx="52" ry="22" fill="#2a2010"/>
+            <rect x="128" y="112" width="104" height="18" fill="#2a2010"/>
+            <!-- Face features -->
+            <!-- Eyes -->
+            <ellipse cx="162" cy="155" rx="7" ry="5" fill="#fff"/>
+            <circle  cx="162" cy="155" r="3.5" fill="#2a1a08"/>
+            <ellipse cx="198" cy="155" rx="7" ry="5" fill="#fff"/>
+            <circle  cx="198" cy="155" r="3.5" fill="#2a1a08"/>
+            <!-- Eyebrows (distinguished, thick) -->
+            <path d="M153 146 Q162 142 171 146" stroke="#2a1a08" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M189 146 Q198 142 207 146" stroke="#2a1a08" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- Nose -->
+            <path d="M178 160 Q180 172 182 160" stroke="#b08858" stroke-width="2" fill="none"/>
+            <!-- Mouth (slight smile) -->
+            <path d="M168 175 Q180 182 192 175" stroke="#a07848" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- Distinguished beard/mustache -->
+            <path d="M165 174 Q180 178 195 174" stroke="#3a2a10" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+            <!-- Glasses -->
+            <rect x="150" y="149" width="22" height="15" rx="4" fill="none" stroke="#4a3a20" stroke-width="2"/>
+            <rect x="188" y="149" width="22" height="15" rx="4" fill="none" stroke="#4a3a20" stroke-width="2"/>
+            <line x1="172" y1="156" x2="188" y2="156" stroke="#4a3a20" stroke-width="2"/>
+            <!-- Ears -->
+            <ellipse cx="128" cy="162" rx="8" ry="12" fill="#c8a878"/>
+            <ellipse cx="232" cy="162" rx="8" ry="12" fill="#c8a878"/>
+            <!-- Gold pin on lapel -->
+            <circle cx="162" cy="230" r="5" fill="#C9A84C"/>
+            <!-- Name plate bottom -->
+            <rect x="80" y="328" width="200" height="32" rx="3" fill="#C9A84C" opacity="0.9"/>
+            <text x="180" y="349" font-family="serif" font-size="14" fill="#1A3A2A" text-anchor="middle" font-weight="600">Mian Mansha</text>
+          </svg>
+        </div>
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring-2"></div>
+        <div class="exp-badge">25+ Years of Vision</div>
+      </div>
+
+      <!-- Info -->
+      <div class="supervisor-info">
+        <span class="member-tag">Founder &amp; Director</span>
+        <h2 class="member-name">Mian Mansha</h2>
+        <span class="member-name-ur">میاں منشا</span>
+        <div class="member-title">Chief Horticulturist &amp; Managing Director — Green Hands Pakistan</div>
+
+        <p class="member-bio">
+          With over 25 years of hands-on experience in horticulture, landscape architecture, and green infrastructure, Mian Mansha is the visionary force behind Green Hands. He established the company with a singular mission — to bring world-class landscaping to Pakistan's homes, businesses, and public spaces. His deep knowledge of Pakistan's diverse soil types, climate zones, and native plant species has made Green Hands the country's most trusted name in the industry.
+        </p>
+        <p class="member-bio" style="margin-bottom:0;">
+          Under his supervision, every project — from a private villa in DHA Lahore to a corporate campus in Islamabad — is personally reviewed to ensure it meets the highest standards of quality, sustainability, and aesthetic excellence.
+        </p>
+
+        <div class="member-stats" style="margin-top:28px;">
+          <div>
+            <div class="mstat-num">25+</div>
+            <div class="mstat-label">Years Experience</div>
+          </div>
+          <div>
+            <div class="mstat-num">2,400+</div>
+            <div class="mstat-label">Projects Overseen</div>
+          </div>
+          <div>
+            <div class="mstat-num">3</div>
+            <div class="mstat-label">Cities Led</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     SUPERVISION BANNER
+═══════════════════════════════════════ -->
+<div class="supervision-banner">
+  <p>The following professionals operate directly under the guidance of <strong>Mian Mansha</strong> — ensuring every project reflects his standard of excellence.</p>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     TEAM MEMBERS
+═══════════════════════════════════════ -->
+<div class="team-section">
+  <div class="team-inner">
+
+    <div style="text-align:center;" class="reveal">
+      <span class="section-tag">Senior Professionals</span>
+      <h2 class="section-heading">Our <em>Expert Team</em></h2>
+      <p class="section-sub mx-auto" style="text-align:center;">Each member brings over 15 years of on-ground experience in Pakistan's most demanding landscaping projects.</p>
+    </div>
+
+    <div class="team-grid">
+
+      <!-- ── JAN NISAR ── -->
+      <article class="team-card reveal">
+        <div class="card-visual">
+          <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;" role="img" aria-label="Jan Nisar portrait">
+            <!-- BG: garden scene -->
+            <rect width="480" height="360" fill="#1e4a30"/>
+            <ellipse cx="240" cy="300" rx="300" ry="100" fill="#2d6a45"/>
+            <!-- Trees background -->
+            <ellipse cx="60"  cy="200" rx="60" ry="80" fill="#1e5c30"/>
+            <ellipse cx="60"  cy="178" rx="46" ry="62" fill="#2d7a44"/>
+            <ellipse cx="420" cy="210" rx="55" ry="75" fill="#1e5c30"/>
+            <ellipse cx="420" cy="190" rx="42" ry="58" fill="#2d7a44"/>
+            <!-- Ground -->
+            <rect x="0" y="280" width="480" height="80" fill="#2d5a30"/>
+            <!-- Figure body shadow -->
+            <ellipse cx="240" cy="295" rx="60" ry="14" fill="#1a3a2a" opacity="0.5"/>
+            <!-- Body / work clothes -->
+            <path d="M180 270 C178 240 185 215 200 205 L240 220 L280 205 C295 215 302 240 300 270 L300 360 L180 360Z" fill="#3a5a2a"/>
+            <!-- White collar -->
+            <path d="M228 205 L240 218 L252 205 L248 228 L240 234 L232 228Z" fill="#f0ebe0"/>
+            <!-- Neck -->
+            <rect x="230" y="190" width="20" height="20" fill="#d4a870" rx="4"/>
+            <!-- Head -->
+            <ellipse cx="240" cy="165" rx="50" ry="56" fill="#d4a870"/>
+            <!-- Hair (dark, short) -->
+            <ellipse cx="240" cy="118" rx="50" ry="20" fill="#1a1008"/>
+            <rect x="190" y="117" width="100" height="18" fill="#1a1008"/>
+            <!-- Face -->
+            <ellipse cx="222" cy="158" rx="6.5" ry="5" fill="#fff"/>
+            <circle  cx="222" cy="158" r="3" fill="#1a1008"/>
+            <ellipse cx="258" cy="158" rx="6.5" ry="5" fill="#fff"/>
+            <circle  cx="258" cy="158" r="3" fill="#1a1008"/>
+            <!-- Eyebrows -->
+            <path d="M214 149 Q222 145 230 149" stroke="#1a1008" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M250 149 Q258 145 266 149" stroke="#1a1008" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- Nose -->
+            <path d="M238 162 Q240 172 242 162" stroke="#b88850" stroke-width="1.8" fill="none"/>
+            <!-- Smile -->
+            <path d="M228 178 Q240 186 252 178" stroke="#a07848" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- Beard (full, dark) -->
+            <path d="M200 172 Q210 190 240 196 Q270 190 280 172" fill="#2a1808" opacity="0.7"/>
+            <!-- Ears -->
+            <ellipse cx="190" cy="165" rx="7" ry="11" fill="#d4a870"/>
+            <ellipse cx="290" cy="165" rx="7" ry="11" fill="#d4a870"/>
+            <!-- Work gloves hint -->
+            <ellipse cx="170" cy="268" rx="18" ry="10" fill="#4a6a3a" opacity="0.8"/>
+            <ellipse cx="310" cy="268" rx="18" ry="10" fill="#4a6a3a" opacity="0.8"/>
+            <!-- Plant he's holding -->
+            <rect x="294" y="230" width="8" height="50" fill="#5a3a1a" rx="2"/>
+            <ellipse cx="298" cy="222" rx="22" ry="26" fill="#2d6a3a"/>
+            <ellipse cx="298" cy="215" rx="16" ry="18" fill="#3d7a48"/>
+            <!-- Name plate -->
+            <rect x="100" y="326" width="280" height="30" rx="3" fill="rgba(26,58,42,0.85)"/>
+            <text x="240" y="346" font-family="serif" font-size="13" fill="#C9A84C" text-anchor="middle" font-style="italic">Senior Horticulturist</text>
+          </svg>
+          <div class="card-exp-badge">15+ Yrs Experience</div>
+        </div>
+
+        <div class="card-body">
+          <span class="member-tag" style="color:var(--sage);">Senior Horticulturist</span>
+          <h3 class="member-name" style="font-size:clamp(28px,3vw,40px); color:var(--forest); margin-bottom:4px;">Jan Nisar</h3>
+          <span style="font-family:'Cormorant Garamond',serif; font-size:18px; font-style:italic; color:var(--sage); display:block; margin-bottom:16px;">جان نثار</span>
+
+          <div class="expertise-tags">
+            <span class="etag" style="background:rgba(26,58,42,0.08); border-color:rgba(26,58,42,0.2); color:var(--forest);">Landscape Design</span>
+            <span class="etag" style="background:rgba(26,58,42,0.08); border-color:rgba(26,58,42,0.2); color:var(--forest);">Plant Pathology</span>
+            <span class="etag" style="background:rgba(26,58,42,0.08); border-color:rgba(26,58,42,0.2); color:var(--forest);">Irrigation Systems</span>
+            <span class="etag" style="background:rgba(26,58,42,0.08); border-color:rgba(26,58,42,0.2); color:var(--forest);">Soil Science</span>
+          </div>
+
+          <p style="font-size:14px; line-height:1.75; color:var(--text-mid); margin-bottom:20px;">
+            Jan Nisar is one of Pakistan's most respected senior horticulturists with over 15 years of field experience. Specialising in plant health, soil science, and landscape design, he has personally overseen hundreds of residential and commercial projects across Lahore and Islamabad. His expertise in locally adapted plant species and sustainable irrigation planning is unmatched in the region.
+          </p>
+
+          <div class="skills-section">
+            <div class="skill-row">
+              <div class="skill-header"><span>Landscape Design</span><span>97%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:97%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-header"><span>Plant Pathology</span><span>94%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:94%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-header"><span>Irrigation Systems</span><span>90%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-header"><span>Project Management</span><span>88%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+            </div>
+          </div>
+
+          <div class="career-timeline" style="margin-top:28px;">
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div>
+                <div class="tl-year">2009</div>
+                <div class="tl-desc">Joined Green Hands as Lead Field Horticulturist under Mian Mansha's mentorship</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div>
+                <div class="tl-year">2013</div>
+                <div class="tl-desc">Led the landscaping of DHA Phase 6 Golf Club — 42 acres of premium turf &amp; garden</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div>
+                <div class="tl-year">2018</div>
+                <div class="tl-desc">Promoted to Senior Horticulturist; introduced smart irrigation across all Lahore projects</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div>
+                <div class="tl-year">2024</div>
+                <div class="tl-desc">Heading Green Hands' northern expansion into Islamabad &amp; Rawalpindi operations</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-quote">
+            <p>"ہر پودا ایک زندگی ہے — میں صرف اسے صحیح جگہ لگاتا ہوں۔"<br>
+            <span style="font-style:normal; font-size:13px; color:var(--text-light);">"Every plant is a life — I just put it in the right place."</span></p>
+          </div>
+
+          <div style="margin-top:24px; display:flex; gap:32px; padding-top:20px; border-top:1px solid var(--ivory-warm);">
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:300; color:var(--forest);">15+</div>
+              <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-light); margin-top:2px;">Years Experience</div>
+            </div>
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:300; color:var(--forest);">800+</div>
+              <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-light); margin-top:2px;">Projects Completed</div>
+            </div>
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:300; color:var(--forest);">Lahore</div>
+              <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-light); margin-top:2px;">Base City</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── IMRAN ── -->
+      <article class="team-card reveal">
+        <div class="card-visual">
+          <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;" role="img" aria-label="Imran portrait">
+            <!-- BG: outdoor scene -->
+            <rect width="480" height="360" fill="#1e3a50"/>
+            <!-- Sky gradient hint -->
+            <rect width="480" height="160" fill="#1a2a40" opacity="0.6"/>
+            <!-- Margalla hills silhouette -->
+            <path d="M0 160 Q80 90 160 130 Q240 70 320 120 Q390 80 480 110 L480 200 L0 200Z" fill="#1a2a18" opacity="0.7"/>
+            <!-- Ground -->
+            <rect x="0" y="280" width="480" height="80" fill="#2d5a30"/>
+            <ellipse cx="240" cy="295" rx="70" ry="16" fill="#1a3a2a" opacity="0.5"/>
+            <!-- Body / neat shalwar kameez look -->
+            <path d="M178 272 C176 242 183 215 198 205 L240 220 L282 205 C297 215 304 242 302 272 L302 360 L178 360Z" fill="#1a3a5a"/>
+            <!-- Collar -->
+            <path d="M226 205 L240 218 L254 205 L250 226 L240 232 L230 226Z" fill="#f8f5ee"/>
+            <!-- Neck -->
+            <rect x="230" y="190" width="20" height="20" fill="#c8a060" rx="4"/>
+            <!-- Head -->
+            <ellipse cx="240" cy="162" rx="52" ry="57" fill="#c8a060"/>
+            <!-- Hair -->
+            <ellipse cx="240" cy="115" rx="52" ry="22" fill="#0a0808"/>
+            <rect x="188" y="114" width="104" height="20" fill="#0a0808"/>
+            <!-- Face -->
+            <ellipse cx="221" cy="155" rx="7" ry="5.5" fill="#fff"/>
+            <circle  cx="221" cy="155" r="3.5" fill="#0a0808"/>
+            <ellipse cx="259" cy="155" rx="7" ry="5.5" fill="#fff"/>
+            <circle  cx="259" cy="155" r="3.5" fill="#0a0808"/>
+            <!-- Eyebrows (strong) -->
+            <path d="M212 146 Q221 141 230 146" stroke="#0a0808" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M250 146 Q259 141 268 146" stroke="#0a0808" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- Nose -->
+            <path d="M237 162 Q240 173 243 162" stroke="#a07838" stroke-width="2" fill="none"/>
+            <!-- Confident smile -->
+            <path d="M226 176 Q240 185 254 176" stroke="#a07838" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- Short beard -->
+            <path d="M200 170 Q210 186 240 192 Q270 186 280 170" fill="#1a0a08" opacity="0.55"/>
+            <!-- Ears -->
+            <ellipse cx="188" cy="163" rx="7" ry="12" fill="#c8a060"/>
+            <ellipse cx="292" cy="163" rx="7" ry="12" fill="#c8a060"/>
+            <!-- Blueprint/plan in hand -->
+            <rect x="300" y="225" width="70" height="52" fill="#e8e0c8" rx="3" transform="rotate(-8,335,251)"/>
+            <line x1="308" y1="238" x2="358" y2="238" stroke="#2d4a6a" stroke-width="1.5" opacity="0.7" transform="rotate(-8,335,251)"/>
+            <line x1="308" y1="248" x2="358" y2="248" stroke="#2d4a6a" stroke-width="1.5" opacity="0.7" transform="rotate(-8,335,251)"/>
+            <line x1="308" y1="258" x2="340" y2="258" stroke="#2d4a6a" stroke-width="1.5" opacity="0.7" transform="rotate(-8,335,251)"/>
+            <!-- Trees behind -->
+            <ellipse cx="90"  cy="230" rx="42" ry="52" fill="#2d6a3a" opacity="0.8"/>
+            <ellipse cx="390" cy="220" rx="38" ry="48" fill="#2d6a3a" opacity="0.8"/>
+            <!-- Name plate -->
+            <rect x="100" y="326" width="280" height="30" rx="3" fill="rgba(26,42,58,0.85)"/>
+            <text x="240" y="346" font-family="serif" font-size="13" fill="#C9A84C" text-anchor="middle" font-style="italic">Landscape Architect</text>
+          </svg>
+          <div class="card-exp-badge">15+ Yrs Experience</div>
+        </div>
+
+        <div class="card-body">
+          <span class="member-tag" style="color:var(--sage);">Landscape Architect</span>
+          <h3 class="member-name" style="font-size:clamp(28px,3vw,40px); color:var(--forest); margin-bottom:4px;">Imran</h3>
+          <span style="font-family:'Cormorant Garamond',serif; font-size:18px; font-style:italic; color:var(--sage); display:block; margin-bottom:16px;">عمران</span>
+
+          <div class="expertise-tags">
+            <span class="etag" style="background:rgba(26,58,42,0.08); border-color:rgba(26,58,42,0.2); color:var(--forest);">Landscape Architecture</span>
+            <span class="etag" style="background:rgba(26,58,42,0.08); border-color:rgba(26,58,42,0.2); color:var(--forest);">Water Features</span>
+            <span class="etag" style="background:rgba(26,58,42,0.08); border-color:rgba(26,58,42,0.2); color:var(--forest);">3D Garden Design</span>
+            <span class="etag" style="background:rgba(26,58,42,0.08); border-color:rgba(26,58,42,0.2); color:var(--forest);">Vertical Gardens</span>
+          </div>
+
+          <p style="font-size:14px; line-height:1.75; color:var(--text-mid); margin-bottom:20px;">
+            Imran is Green Hands' principal landscape architect with a 15+ year track record of designing award-worthy outdoor environments across Pakistan. From luxury residential gardens in Bahria Town to the fountains of Faisalabad's top hotels, his design language blends aesthetic beauty with practical sustainability. He leads all 3D conceptualisation, client design presentations, and installation supervision.
+          </p>
+
+          <div class="skills-section">
+            <div class="skill-row">
+              <div class="skill-header"><span>Landscape Architecture</span><span>98%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:98%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-header"><span>Water Feature Design</span><span>95%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-header"><span>3D Design &amp; Visualisation</span><span>92%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-header"><span>Client Relations</span><span>96%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:96%"></div></div>
+            </div>
+          </div>
+
+          <div class="career-timeline" style="margin-top:28px;">
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div>
+                <div class="tl-year">2008</div>
+                <div class="tl-desc">Began career as a landscape draughtsman; trained directly under Mian Mansha</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div>
+                <div class="tl-year">2012</div>
+                <div class="tl-desc">Designed the landmark water feature garden for Pearl Continental Faisalabad</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div>
+                <div class="tl-year">2017</div>
+                <div class="tl-desc">Led vertical garden &amp; living wall division; installed 60+ living walls across Pakistan</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div>
+                <div class="tl-year">2023</div>
+                <div class="tl-desc">Appointed Principal Landscape Architect, overseeing all design output company-wide</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-quote">
+            <p>"A garden is not just ground — it is a story written in leaves, water, and light."</p>
+          </div>
+
+          <div style="margin-top:24px; display:flex; gap:32px; padding-top:20px; border-top:1px solid var(--ivory-warm);">
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:300; color:var(--forest);">15+</div>
+              <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-light); margin-top:2px;">Years Experience</div>
+            </div>
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:300; color:var(--forest);">60+</div>
+              <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-light); margin-top:2px;">Living Walls Installed</div>
+            </div>
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:300; color:var(--forest);">Faisalabad</div>
+              <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-light); margin-top:2px;">Base City</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     CTA
+═══════════════════════════════════════ -->
+<div class="cta-strip">
+  <h2>Work With Pakistan's <em>Best Green Team</em></h2>
+  <p>Our experts are ready to visit your site and bring your vision to life — free consultation, no obligation.</p>
+  <div class="cta-actions">
+    <a href="index.html#contact" class="btn-primary">Book Free Consultation</a>
+    <a href="https://wa.me/923314412354" class="btn-outline" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon" aria-hidden="true">🌿</div>
+        <span class="logo-text" style="font-size:20px;">Green <span>Hands</span></span>
+      </a>
+      <p>Pakistan's premier horticulture and landscaping studio. Creating living masterpieces for homes, hotels, and public spaces since 2009.</p>
+      <div class="social-links">
+        <a href="https://facebook.com"  target="_blank" rel="noopener" class="social-link" aria-label="Facebook">📘</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">📸</a>
+        <a href="https://pinterest.com" target="_blank" rel="noopener" class="social-link" aria-label="Pinterest">📌</a>
+        <a href="https://youtube.com"   target="_blank" rel="noopener" class="social-link" aria-label="YouTube">▶️</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="index.html#services">Plant Supply &amp; Décor</a></li>
+        <li><a href="index.html#services">Landscape Design</a></li>
+        <li><a href="index.html#services">Irrigation Solutions</a></li>
+        <li><a href="index.html#services">Water Features</a></li>
+        <li><a href="index.html#services">Garden Maintenance</a></li>
+        <li><a href="index.html#services">Outdoor Living</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#sustainability">Sustainability</a></li>
+        <li><a href="index.html#contact">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="index.html#contact">Get a Quote</a></li>
+        <li><a href="index.html#contact">Maintenance Contracts</a></li>
+        <li><a href="index.html#contact">Plant Doctor</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+        <li><a href="index.html#contact">Terms &amp; Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Green Hands Horticulture (Pvt) Ltd. All rights reserved. · Lahore, Pakistan</p>
+    <div class="footer-lang">
+      <a href="#" hreflang="en">English</a>
+      <a href="#" hreflang="ar" lang="ar">اردو</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

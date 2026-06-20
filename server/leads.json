@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1781974062756,
+    "submittedAt": "2026-06-20T16:47:42.756Z",
+    "firstName": "Test",
+    "lastName": "User",
+    "email": "test@test.com",
+    "phone": "+923001234567",
+    "service": "Landscape Design",
+    "message": "Testing the backend",
+    "ip": "::1"
+  }
+]
